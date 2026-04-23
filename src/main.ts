@@ -15,12 +15,12 @@ export default class MyPlugin extends Plugin {
 	async activateView() {
 		this.app.workspace.detachLeavesOfType(HOME_VIEW_TYPE);
 
-		await this.app.workspace.getRightLeaf(false)?.setViewState({
+		await this.app.workspace.getLeaf('tab')?.setViewState({
 			type: HOME_VIEW_TYPE,
 			active: true,
 		});
 
-		this.app.workspace.revealLeaf(
+		await this.app.workspace.revealLeaf(
 			this.app.workspace.getLeavesOfType(HOME_VIEW_TYPE)[0]
 		);
 	}

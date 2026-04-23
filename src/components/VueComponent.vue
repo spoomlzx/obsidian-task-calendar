@@ -1,7 +1,7 @@
 <template>
 	<div class="my-plugin-container">
-		<h3>Hello from Vue!</h3>
-		<p>This is a sample Vue component running inside an Obsidian plugin.</p>
+		<h3>sdfdsfsdfd                    ue!</h3>
+		<p>水电费水电费士大夫.</p>
 		<p>The current count is: {{ count }}</p>
 		<button @click="increment">Increment</button>
 	</div>
