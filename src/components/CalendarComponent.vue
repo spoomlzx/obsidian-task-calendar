@@ -7,6 +7,7 @@ import dayGridPlugin from '@fullcalendar/vue3/daygrid'
 import timeGridPlugin from '@fullcalendar/vue3/timegrid'
 import interactionPlugin from '@fullcalendar/vue3/interaction'
 import listPlugin from '@fullcalendar/vue3/list'
+import zhLocale from '@fullcalendar/vue3/locales/zh-cn'
 import { RESOURCES, INITIAL_EVENTS, createEventId } from '@/utils/event-utils'
 
 import '@/styles/skeleton.css'
@@ -33,9 +34,28 @@ export default defineComponent({
 				headerToolbar: {
 					left: 'prev,next today',
 					center: 'title',
-					right: 'dayGridMonth,timeGridWeek,listWeek'
+					right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
 				},
+				buttons: {
+					today: {
+						text: '今天',
+					},
+					dayGridMonth: {
+						text: '月',
+					},
+					timeGridWeek: {
+						text: '周',
+					},
+					timeGridDay: {
+						text: '日',
+					},
+					listMonth: {
+						text: '日程',
+					},
+				},
+				nowIndicator: true,
 				initialView: 'dayGridMonth',
+				locale: 'zh-cn',
 				initialEvents: INITIAL_EVENTS, // alternatively, use the `events` setting to fetch from a feed
 				resources: RESOURCES,
 				editable: true,
