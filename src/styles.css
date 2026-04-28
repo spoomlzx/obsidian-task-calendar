@@ -6,3 +6,10 @@ available in the app when your plugin is enabled.
 If your plugin does not need CSS, delete this file.
 
 */
+html,
+body,
+#app {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}

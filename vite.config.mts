@@ -48,6 +48,15 @@ export default defineConfig(async ({ mode }) => {
 				],
 				output: {
 					banner: banner,
+					// 将CSS强制重命名为styles.css
+					assetFileNames: (assetInfo: { name: string; }) => {
+						// 如果是CSS文件，强制重命名为styles.css
+						if (assetInfo.name?.endsWith('.css')) {
+							return 'styles.css';
+						}
+						// 其他资源保持默认路径和名称（可选）
+						return 'assets/[name].[hash][extname]';
+					},
 				},
 			},
 			// Set to 'es2018' to support older versions of Obsidian

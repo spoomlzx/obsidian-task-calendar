@@ -1,5 +1,5 @@
 import { Notice, Plugin } from "obsidian";
-import { HOME_VIEW_TYPE, HomeView } from "./HomeView";
+import { HOME_VIEW_TYPE, HomeView } from "./views/HomeView";
 
 export default class MyPlugin extends Plugin {
 	async onload() {

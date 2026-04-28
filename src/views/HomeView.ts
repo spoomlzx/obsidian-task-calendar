@@ -1,11 +1,12 @@
 import { ItemView, WorkspaceLeaf } from "obsidian";
 import { createApp, type App as VueApp } from "vue";
-import VueComponent from "./components/VueComponent.vue";
+import VueComponent from "../components/VueComponent.vue";
+import '../styles.css'
 
 export const HOME_VIEW_TYPE = "home-view";
 
 export class HomeView extends ItemView {
-	private vueApp: VueApp;
+	private vueApp: VueApp | undefined;
 
 	constructor(leaf: WorkspaceLeaf) {
 		super(leaf);
