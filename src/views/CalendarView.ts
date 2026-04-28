@@ -1,11 +1,11 @@
 import { ItemView, WorkspaceLeaf } from "obsidian";
 import { createApp, type App as VueApp } from "vue";
-import VueComponent from "../components/VueComponent.vue";
+import CalendarComponent from "../components/CalendarComponent.vue";
 import '../styles.css'
 
-export const HOME_VIEW_TYPE = "home-view";
+export const CALENDAR_VIEW_TYPE = "calendar-view";
 
-export class HomeView extends ItemView {
+export class CalendarView extends ItemView {
 	private vueApp: VueApp | undefined;
 
 	constructor(leaf: WorkspaceLeaf) {
@@ -13,21 +13,21 @@ export class HomeView extends ItemView {
 	}
 
 	getViewType(): string {
-		return HOME_VIEW_TYPE;
+		return CALENDAR_VIEW_TYPE;
 	}
 
 	getDisplayText(): string {
-		return "Home";
+		return "Task Calendar";
 	}
 
 	getIcon(): string {
-		return "dice";
+		return "calendar-range";
 	}
 
 	async onOpen() {
 		const container = this.containerEl.children[1];
 		container.empty();
-		this.vueApp = createApp(VueComponent);
+		this.vueApp = createApp(CalendarComponent);
 		this.vueApp.mount(container);
 	}
 
