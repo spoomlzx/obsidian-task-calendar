@@ -36,28 +36,13 @@ export default defineComponent({
 					center: 'title',
 					right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
 				},
-				buttons: {
-					today: {
-						text: '今天',
-					},
-					dayGridMonth: {
-						text: '月',
-					},
-					timeGridWeek: {
-						text: '周',
-					},
-					timeGridDay: {
-						text: '日',
-					},
-					listMonth: {
-						text: '日程',
-					},
-				},
-				nowIndicator: true,
 				initialView: 'dayGridMonth',
-				locale: 'zh-cn',
 				initialEvents: INITIAL_EVENTS, // alternatively, use the `events` setting to fetch from a feed
 				resources: RESOURCES,
+				nowIndicator: true,
+				locale: zhLocale,
+				height: '100%',
+				schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
 				editable: true,
 				selectable: true,
 				selectMirror: true,
@@ -65,9 +50,7 @@ export default defineComponent({
 				weekends: true,
 				select: this.handleDateSelect,
 				eventClick: this.handleEventClick,
-				eventsSet: this.handleEvents,
-				schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
-				height: '100%',
+				eventsSet: this.handleEvents
 				/* you can update a remote database when these fire:
 				eventAdd:
 				eventChange:
@@ -78,9 +61,6 @@ export default defineComponent({
 		}
 	},
 	methods: {
-		handleWeekendsToggle() {
-			this.calendarOptions.weekends = !this.calendarOptions.weekends // update a property
-		},
 		handleDateSelect(selectInfo: DateSelectInfo) {
 			let title = prompt('Please enter a new title for your event')
 			let calendarApi = selectInfo.view.calendar
@@ -105,10 +85,7 @@ export default defineComponent({
 		},
 		handleEvents(events: EventApi[]) {
 			this.currentEvents = events
-		},
-		handlePrint() {
-			window.print()
-		},
+		}
 	}
 })
 
