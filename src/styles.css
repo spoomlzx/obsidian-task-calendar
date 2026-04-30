@@ -9,11 +9,18 @@ If your plugin does not need CSS, delete this file.
 html,
 body,
 #app {
+	height: 100%;
 	margin: 0;
 	padding: 0;
-	height: 100%;
+	font-size: 14px;
 }
 
 button:not(.clickable-icon) {
 	box-shadow: none;
+}
+
+.fc {
+	flex: 1;
+	/* 确保滚动条在日历内部 */
+	overflow: auto;
 }

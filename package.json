@@ -24,10 +24,9 @@
 		"vite": "8.0.10"
 	},
 	"dependencies": {
-		"@fullcalendar/vue3": "^7.0.0-rc.2",
-		"temporal-polyfill": "^0.3.2",
-		"@fullcalendar/vue3-scheduler": "7.0.0-rc.2",
-		"vue": "^3.5.17"
+		"fullcalendar": "7.0.0-rc.2",
+		"fullcalendar-scheduler": "7.0.0-rc.2",
+		"temporal-polyfill": "^0.3.2"
 	},
 	"dependenciesMeta": {
 		"@fullcalendar/vue3": {

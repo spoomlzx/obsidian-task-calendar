@@ -13,9 +13,9 @@ export default class TaskCalendarPlugin extends Plugin {
 
 		this.addSettingTab(new TaskCalendarSettingTab(this.app, this))
 
-		this.addRibbonIcon("dice", "Open Vue Component", () => {
+		this.addRibbonIcon("calendar-range", "Open Task Calendar", () => {
 			this.activateView().then(() => {
-				new Notice("Vue Component opened");
+				new Notice("Task Calendar opened");
 			});
 		});
 	}

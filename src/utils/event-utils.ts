@@ -6,13 +6,13 @@ let todayStr = new Date().toISOString().replace(/T.*$/, '') // YYYY-MM-DD of tod
 export const INITIAL_EVENTS: EventInput[] = [
 	{
 		id: createEventId(),
-		title: 'All-day event',
+		title: '仔细研究fullcalendar源码，撰写几十块经典复刻减税降费',
 		start: todayStr,
 		resourceId: 'a',
 	},
 	{
 		id: createEventId(),
-		title: 'Timed event',
+		title: '编写task Calendar 插件',
 		start: todayStr + 'T12:00:00',
 		resourceId: 'b',
 	}
